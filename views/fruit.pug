@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  - var results = [{"fruit_Name":"Apple","fruit_colour" :"Red","fruit_cost":"$10"},{"fruit_Name":"Banana","fruit_colour":"Yellow","fruit_cost" :"$15"},{"fruit_Name":"orange","fruit_colour":"orange","fruit_cost" :"$14"}]
+  div.container-fluid
+      div.row
+          each item,index in results
+               div.col-sm-2(onclick=`buy(${index})`) fruit name: #{item["fruit_name"]} <br> fruit colour: #{item["fruit_colour"]} <br> fruit cost: #{item["fruit_cost"]}
+      script.
+          function buy(index) {
+          alert("You Purchased item "+index);
+            } 

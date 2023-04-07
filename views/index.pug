@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 #{title}
+  p I like being outdoors <br>
+  button(type="button" class="btn btn-primary",onclick="reduce()") press me
+
+  div(id="reduce" ) REDUCE THE VALUE 
+  a(href="deodorant") Link 
+  script.
+    let count =20;
+    let change = -1;
+    function reduce(){
+      count = count+change;
+      change = change--;
+      console.log (count, change,"REDUCE function output");
+      document.getElementById('reduce').innerHTML="count is "+count+" change is"+change;
+    }
+   
